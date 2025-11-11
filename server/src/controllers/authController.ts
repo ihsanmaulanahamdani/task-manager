@@ -26,7 +26,7 @@ export const register = async (
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: user.id },
+      { userId: user.id },
       process.env.JWT_SECRET as string,
       { expiresIn: process.env.JWT_EXPIRES_IN || '7d' } as any
     );
@@ -97,5 +97,5 @@ export const logout = async (
   req: AuthRequest,
   res: Response
 ): Promise<void> => {
-  res.status(204).send();
+  res.status(200).json({ message: 'Logged out successfully' });
 };
