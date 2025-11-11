@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Task Manager Client
+
+A modern task management application built with Next.js and Clean Architecture principles.
+
+## Overview
+
+This is the frontend client for the Task Manager application. It provides a user-friendly interface for managing tasks with features like creating, updating, deleting, and filtering tasks by status. The application includes authentication functionality for secure user access.
+
+## Architecture
+
+The project follows Clean Architecture principles with clear separation of concerns:
+
+- **Domain Layer**: Contains core business entities (Task, User) and use cases
+- **Data Layer**: Handles API communication and repository implementations
+- **Presentation Layer**: React components, hooks, and UI logic
+
+## Features
+
+- User authentication (login, signup, logout)
+- Create, read, update, and delete tasks
+- Filter tasks by status (pending, in progress, completed)
+- Responsive design with modern UI components
+- Real-time updates and loading states
+
+## Tech Stack
+
+- Next.js 14 with App Router
+- TypeScript for type safety
+- React for UI components
+- Tailwind CSS for styling
+- Jest for unit testing
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Available Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm test` - Run tests
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+- `src/app` - Next.js app router pages and layouts
+- `src/domain` - Business entities, interfaces, and use cases
+- `src/data` - API clients and repository implementations
+- `src/presentation` - React components, hooks, and providers
+- `__tests__` - Unit tests for domain logic
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Configure the following environment variables:
 
-## Deploy on Vercel
+- `NEXT_PUBLIC_API_URL` - Backend API URL (default: http://localhost:4000/api)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the test suite:
+
+```bash
+npm test
+```
+
+Run tests in watch mode:
+
+```bash
+npm test -- --watch
+```
